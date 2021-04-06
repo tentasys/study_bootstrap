@@ -5,6 +5,93 @@
     <!-- 너비는 기기의 너비를 사용하고, 초기는 1.0으로 사용하겠다. 반응형 웹에 반드시 필요하다! -->
     <meta name="viewport" content="width=divice-width, initial-scale=1.0">
     <title>CSS를 활용한 반응형 웹 코딩</title>
+    <style>
+        /* 기본적으로 들어가는 css코드. reset css */
+        /* 마진 : 요소와 요소 사이의 간격, 패딩 : 해당하는 요소 안의 컨텐츠와의 거리 */
+        *{padding:0;margin:0;}
+        body{
+            background-color: pink;
+        }
+        #wrapper{
+            border:1px solid gray;
+            width:80%;
+            margin:0 auto;
+            /* 뷰포인트. 보이는것에 따라서 글자크기가 달라짐 */
+            font-size:1.5vw;
+        }
+        /* 공백 : 후손 선택자. 밑에 있는 것 사용 */
+        nav li{
+            list-style: none;
+            float:left;
+            border:1px solid gray;
+            width:20%;
+            /* 사이즈는 보더까지 포함해서 넣어주겠다. */
+            box-sizing: border-box;
+            text-align: center;
+        }
+        nav ul{
+            /* 넘치면 숨겨주겠다 */
+            overflow: hidden;
+        }
+        header h1{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        header{
+            /* 위/아래 패딩 */
+            padding: 20px 0;
+            border:1px solid gray;
+        }
+
+        .content{
+            padding:10px;
+        }
+
+        footer{
+            border:1px solid gray;
+            /* 텍스트 세로 정렬 : valign도 있지만 line-height를 이용해서 정렬할 수도 있음 */
+            height:100px;
+            line-height: 100px;
+            text-align: center;
+        }
+        /* 스마트폰 사이즈 */
+        @media (max-width: 767px){
+            body{
+                background-color: rgb(247, 0, 164);
+            }
+            #wrapper{
+                width:100%;
+                font-size: 2em;
+            }
+            nav li{
+                width:100%;
+            }
+        }
+        /* 타블렛 사이즈 */
+        @media (min-width: 768px){
+            body{
+                background-color: beige;
+            }
+            #wrapper{
+                width:100%;
+            }
+            
+        }
+        
+        @media (min-width:992px){
+            body{
+                background-color: rgb(223, 173, 216);
+            }
+            #wrapper{
+                width:80%;
+            }
+        }
+        @media (min-width:1200px){
+            body{
+                background-color: rgb(92, 56, 87);
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- div#wrapper -->
