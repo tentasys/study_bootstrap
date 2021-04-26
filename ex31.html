@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트를 활용한 모달 넣기</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .modal{
+            position:relative;
+            top:100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" id="btn1" onclick="test()">
+    Launch demo modal
+    </button>
+    <!-- Modal : 첫번째 모달 -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias quis officia molestiae quidem dicta laudantium quod, recusandae quisquam consequuntur voluptate ullam facilis animi vero ex quaerat libero ad quae voluptatem!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a type="button" class="btn btn-primary" href="http://www.google.com" target="_blank">Save changes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal : 두번째 모달 -->
+    <button type="button" class="btn btn-info" data-bs-toggle="modal" id="btn2" onclick="test2()">
+        내일의 날씨 보러가기
+    </button>
+    <div class="modal fade" id="myModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">내일의 날씨 확인해 보세요</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    내일을 준비해 보세요
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a type="button" class="btn btn-primary" href="http://www.google.com" target="_blank">상세 확인하기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal : 세번째 모달 -->
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" id="btn3" onclick="test3()">
+        내일의 날씨 보러가기
+    </button>
+    <div class="modal fade" id="myModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">내일의 날씨 확인해 보세요</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    내일을 준비해 보세요
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a type="button" class="btn btn-primary" href="http://www.google.com" target="_blank">상세 확인하기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis id, asperiores sed fugit quaerat ducimus sint consequuntur eligendi soluta magnam quae laudantium commodi, cupiditate similique reiciendis delectus numquam facilis in.
+    </section>
+    <script>
+        var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
+            backdrop:'static', keyboard:false
+        });
+        var btn1 = document.getElementById("btn1");
+        //btn1.onclick = myModal.show();
+        //myModal.show();
+        function test(){
+            myModal.show();
+        }
+        var myModalEl = document.getElementById('myModal');
+        myModalEl.addEventListener('hide.bs.modal', function(event){
+            alert("hello world!");
+        });
+
+        var myModal2 = new bootstrap.Modal(document.getElementById('myModal2'), {
+            backdrop:false, keyboard:false
+        });
+        var btn2 = document.getElementById("btn2");
+        function test2(){
+            myModal2.show();
+        }
+
+        var myModal3 = new bootstrap.Modal(document.getElementById('myModal3'));
+        var btn3 = document.getElementById("btn3");
+        function test3(){
+            myModal3.hide();
+        }
+    </script>
+</body>
+</html>
